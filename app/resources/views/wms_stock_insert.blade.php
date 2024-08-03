@@ -1,0 +1,128 @@
+@extends("layouts.wms")
+@section('title', 'Wms Entrada de Estoque')
+@section('content')
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+v
+
+<br>
+<div>
+    abc
+</div><br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+<br>
+<div>
+    abc
+</div>
+@endsection
