@@ -20,11 +20,15 @@ export default {
                 primarylight: "#3084f2",
                 primarydark: "#145f82",
                 primarydark_opacity_25: "#145f8240",
+                primarylight_opacity_25: "#3084f240",
                 secondary: "#1c779e",
                 neutralblack: "#1e1e1e",
                 neutralwhite: "#f2f2f2",
-                contrastelight : "#e3c100",
-                contrastedark : "#eac62f",
+                contrastelight: "#e3c100",
+                contrastedark: "#eac62f",
+            },
+            height: {
+                '92-1': "92.1vh",
             }
         },
     },
