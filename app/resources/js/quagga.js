@@ -3,7 +3,6 @@ import Quagga from 'quagga'; // ES6
 //QuaggaJs
 
 if (document.getElementById('cam') != undefined && document.getElementById('cam') != null) {
-    console.log('teste')
     Quagga.init({
         inputStream: {
             name: "Live",
@@ -21,4 +20,12 @@ if (document.getElementById('cam') != undefined && document.getElementById('cam'
         console.log("Initialization finished. Ready to start");
         Quagga.start();
     });
+
+    Quagga.onDetected(function(result){
+        console.log(result.codeResult)
+        var barcode = result.codeResult.code
+        var splittedBarCode = barcode.split('')
+        var serie = `${splittedBarCode[0]}${splittedBarCode[1]}${splittedBarCode[2]}${splittedBarCode[3]}}`
+        var product_code = barcode
+    })
 }

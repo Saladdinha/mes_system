@@ -19,12 +19,13 @@
         </x-header>
     </header>
     <div class="page-content flex flex-row relative">
-        <aside class="basis-1/4 py-3 px-3 h-92-1 sticky top-12 text-neutralwhite bg-neutralblack max-w-64">
+        <aside
+            class="py-3 px-3 h-92-1 sticky top-12 text-neutralwhite bg-neutralblack max-w-64 sidemenu w-20 duration-300 ease-linear transition-all max-md:absolute max-md:top-0">
             <x-side-menu>
 
             </x-side-menu>
         </aside>
-        <main class="w-full p-3 bg-neutralwhite">
+        <main class="w-full p-3 bg-neutralwhite flex gap-4">
             @section('content')
         </main>
     </div>

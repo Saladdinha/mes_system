@@ -4,6 +4,34 @@
 @tailwind components;
 @tailwind utilities;
 
-li.activate{
+li.activate {
     @apply bg-primarylight_opacity_25;
+}
+video{
+    @apply rounded-lg;
+    @apply border-2;
+    @apply border-primarydark;
+}
+canvas{
+    @apply w-full;
+    @apply object-contain;
+    @apply absolute;
+    @apply top-0;
+}
+aside.sidemenu.expanded .withdrawn {
+    display: none;
+}
+
+aside.sidemenu.expanded .expanded,
+aside.sidemenu.expanded li span.title {
+    display: block;
+    @apply opacity-100;
+}
+
+aside.sidemenu .expanded {
+    display: none;
+}
+
+aside.sidemenu.expanded {
+    @apply w-full;
 }

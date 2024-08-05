@@ -27,8 +27,17 @@ export default {
                 contrastelight: "#e3c100",
                 contrastedark: "#eac62f",
             },
+            spacing: {
+                '65': '17rem'
+            },
             height: {
                 '92-1': "92.1vh",
+            },
+            width: {
+                '1.8/4': "48%"
+            },
+            transitionProperty: {
+                width: "width"
             }
         },
     },
