@@ -1,9 +1,7 @@
 # use PHP 8.3
 FROM php:8.3-fpm
 
-ARG user=laraveladmin
-ARG uid=1000
-
+RUN usermod -u 1000 www-data
 # Install common php extension dependencies
 RUN apt-get update && apt-get install -y \
     git \
@@ -16,35 +14,26 @@ RUN apt-get update && apt-get install -y \
     unzip \
     nginx \
     supervisor \
+    npm \
+    libpq-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd \
-    && docker-php-ext-install zip
-
-# Set the working directory
-COPY . /var/www/app
-WORKDIR /var/www/app
-
-# Set high access to laravel storage
-RUN chown -R www-data:www-data /var/www/app \
-    && chmod -R 775 /var/www/app/storage \
-    && chmod 775 ./entrypoint.sh
-
-# Configure pgsql drive
-RUN apt-get install -y libpq-dev \
+    && docker-php-ext-install zip \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
     && docker-php-ext-install pdo pdo_pgsql pgsql
 
+# Set the working directory
+COPY . /var/www/html
+WORKDIR /var/www/html
+COPY --chown=www-data . .
+
 # install composer
-COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# copy composer.json to workdir & install dependencies
-COPY composer.json ./
-RUN composer install
+# Set high access to laravel storage
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 775 /var/www/html/storage \
+    && chmod -R 775 /var/www/html/bootstrap
 
-# Create system user to run Composer and Artisan Commands
-RUN useradd -G www-data,root -u $uid -d /home/$user $user
-RUN mkdir -p /home/$user/.composer && \
-    chown -R $user:$user /home/$user
-
-# Set the default command to run php-fpm
-ENTRYPOINT [ "./entrypoint.sh" ]
+# Set the default command to run image
+ENTRYPOINT [ "./docker/entrypoints/dev.sh" ]

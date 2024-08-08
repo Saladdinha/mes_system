@@ -37,4 +37,8 @@ class MesController extends Controller
     {
         return view('mes_addressing');
     }
+    public function insert_stock()
+    {
+        return view('mes_addressing');
+    }
 }

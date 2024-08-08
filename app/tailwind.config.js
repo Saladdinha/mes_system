@@ -28,10 +28,12 @@ export default {
                 contrastedark: "#eac62f",
             },
             spacing: {
-                '65': '17rem'
+                '65': '17rem',
+                '99': "27rem"
             },
             height: {
                 '92-1': "92.1vh",
+                '100vh': '100vh'
             },
             width: {
                 '1.8/4': "48%"

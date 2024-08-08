@@ -7,17 +7,19 @@
 li.activate {
     @apply bg-primarylight_opacity_25;
 }
-video{
+
+video {
     @apply rounded-lg;
-    @apply border-2;
-    @apply border-primarydark;
 }
-canvas{
+
+canvas {
     @apply w-full;
     @apply object-contain;
     @apply absolute;
     @apply top-0;
+    @apply h-full;
 }
+
 aside.sidemenu.expanded .withdrawn {
     display: none;
 }
@@ -34,4 +36,29 @@ aside.sidemenu .expanded {
 
 aside.sidemenu.expanded {
     @apply w-full;
+}
+
+.select.active .items {
+    @apply translate-y-0;
+    @apply h-24;
+}
+
+.select .items .item.selected {
+    @apply bg-neutralblack;
+    @apply text-neutralwhite;
+}
+
+.select.active .head i.down {
+    @apply hidden;
+}
+
+.select .head i.up {
+    @apply hidden;
+}
+
+.select.active .head i.up {
+    @apply block;
+}
+br{
+    @apply hidden;
 }
